@@ -6,6 +6,7 @@
 #define GLFW_EXPOSE_NATIVE_WIN32
 #include <GLFW/glfw3native.h>
 #include <stdexcept>
+#include <vector>
 
 class HelloTriangleApplication {
 public:
@@ -20,6 +21,10 @@ private:
 	VkDevice device{};
 	VkQueue graphicsQueue;
 	VkQueue presentQueue;
+	VkSwapchainKHR swapChain;
+	std::vector<VkImage> swapChainImages;
+	VkFormat swapChainImageFormat;
+	VkExtent2D swapChainExtent;
 
 	void initWindow();
 
@@ -40,6 +45,8 @@ private:
 	void createInstance();
 
 	bool checkValidationLayerSupport();
+
+	void createSwapChain();
 
 	void populateDebugMessengerCreateInfo(VkDebugUtilsMessengerCreateInfoEXT& createInfo);
 

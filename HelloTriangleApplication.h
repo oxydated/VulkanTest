@@ -51,6 +51,8 @@ private:
 	
 	void createImageViews();
 
+	void createGraphicsPipeline();
+
 	void populateDebugMessengerCreateInfo(VkDebugUtilsMessengerCreateInfoEXT& createInfo);
 
 	static VKAPI_ATTR VkBool32 VKAPI_CALL debugCallback(

@@ -26,6 +26,7 @@ private:
 	std::vector<VkImageView> swapChainImageViews;
 	VkFormat swapChainImageFormat;
 	VkExtent2D swapChainExtent;
+	VkRenderPass renderPass;
 	VkPipelineLayout pipelineLayout;
 
 	void initWindow();
@@ -51,6 +52,8 @@ private:
 	void createSwapChain(); 
 	
 	void createImageViews();
+
+	void createRenderPass();
 
 	void createGraphicsPipeline();
 

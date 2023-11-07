@@ -29,6 +29,7 @@ private:
 	VkRenderPass renderPass;
 	VkPipelineLayout pipelineLayout;
 	VkPipeline graphicsPipeline;
+	std::vector<VkFramebuffer> swapChainFramebuffers;
 
 	void initWindow();
 
@@ -57,6 +58,8 @@ private:
 	void createRenderPass();
 
 	void createGraphicsPipeline();
+
+	void createFramebuffers();
 
 	void populateDebugMessengerCreateInfo(VkDebugUtilsMessengerCreateInfoEXT& createInfo);
 

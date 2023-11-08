@@ -32,6 +32,10 @@ private:
 	std::vector<VkFramebuffer> swapChainFramebuffers;
 	VkCommandPool commandPool;
 	VkCommandBuffer commandBuffer;
+	VkSemaphore imageAvailableSemaphore;
+	VkSemaphore renderFinishedSemaphore;
+	VkFence inFlightFence;
+
 
 	void initWindow();
 
@@ -44,6 +48,8 @@ private:
 	void setupDebugMessenger();
 
 	void createSurface();
+
+	void drawFrame();
 
 	void mainLoop();
 
@@ -66,6 +72,8 @@ private:
 	void createCommandPool();
 
 	void createCommandBuffer();
+
+	void createSyncObjects();
 
 	void recordCommandBuffer(VkCommandBuffer commandBuffer, uint32_t imageIndex);
 

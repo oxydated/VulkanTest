@@ -17,7 +17,7 @@ private:
 	VkInstance instance;
 	VkDebugUtilsMessengerEXT debugMessenger;
 	VkSurfaceKHR surface;
-	VkPhysicalDevice physicalDevice { VK_NULL_HANDLE };
+	VkPhysicalDevice physicalDevice{ VK_NULL_HANDLE };
 	VkDevice device{};
 	VkQueue graphicsQueue;
 	VkQueue presentQueue;
@@ -37,8 +37,11 @@ private:
 	std::vector<VkSemaphore> renderFinishedSemaphores;
 	std::vector<VkFence> inFlightFences;
 
-	uint32_t currentFrame = 0;
+	bool framebufferResized{ false };
 
+	uint32_t currentFrame{ 0 };
+
+	static void framebufferResizeCallback(GLFWwindow* window, int width, int height);
 
 	void initWindow();
 
@@ -56,6 +59,8 @@ private:
 
 	void mainLoop();
 
+	void cleanupSwapChain();
+
 	void cleanup();
 
 	void createInstance();
@@ -63,6 +68,8 @@ private:
 	bool checkValidationLayerSupport();
 
 	void createSwapChain(); 
+
+	void recreateSwapChain();
 	
 	void createImageViews();
 

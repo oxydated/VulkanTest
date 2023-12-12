@@ -36,6 +36,7 @@ private:
 	std::vector<VkSemaphore> imageAvailableSemaphores;
 	std::vector<VkSemaphore> renderFinishedSemaphores;
 	std::vector<VkFence> inFlightFences;
+	VkBuffer vertexBuffer;
 
 	bool framebufferResized{ false };
 
@@ -80,6 +81,8 @@ private:
 	void createFramebuffers();
 
 	void createCommandPool();
+
+	void createVertexBuffer();
 
 	void createCommandBuffers();
 

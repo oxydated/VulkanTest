@@ -37,6 +37,7 @@ private:
 	std::vector<VkSemaphore> renderFinishedSemaphores;
 	std::vector<VkFence> inFlightFences;
 	VkBuffer vertexBuffer;
+	VkDeviceMemory vertexBufferMemory;
 
 	bool framebufferResized{ false };
 

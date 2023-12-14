@@ -38,6 +38,8 @@ private:
 	std::vector<VkFence> inFlightFences;
 	VkBuffer vertexBuffer;
 	VkDeviceMemory vertexBufferMemory;
+	VkBuffer indexBuffer;
+	VkDeviceMemory indexBufferMemory;
 
 	bool framebufferResized{ false };
 
@@ -84,6 +86,8 @@ private:
 	void createCommandPool();
 
 	void createVertexBuffer();
+
+	void createIndexBuffer();
 
 	void createCommandBuffers();
 

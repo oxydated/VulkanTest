@@ -7,3 +7,6 @@ vk_video
 glm
 /Include/GLFW
 Debug
+packages.config
+Microsoft.Windows.CppWinRT.2.0.220531.1
+/shaders/*.spv

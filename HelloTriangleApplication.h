@@ -27,6 +27,9 @@ private:
 	VkFormat swapChainImageFormat;
 	VkExtent2D swapChainExtent;
 	VkRenderPass renderPass;
+	VkDescriptorSetLayout descriptorSetLayout;
+	VkDescriptorPool descriptorPool;
+	std::vector<VkDescriptorSet> descriptorSets;
 	VkPipelineLayout pipelineLayout;
 	VkPipeline graphicsPipeline;
 	std::vector<VkFramebuffer> swapChainFramebuffers;
@@ -40,6 +43,9 @@ private:
 	VkDeviceMemory vertexBufferMemory;
 	VkBuffer indexBuffer;
 	VkDeviceMemory indexBufferMemory;
+	std::vector<VkBuffer> uniformBuffers;
+	std::vector<VkDeviceMemory> uniformBuffersMemory;
+	std::vector<void*> uniformBuffersMapped;
 
 	bool framebufferResized{ false };
 
@@ -79,6 +85,8 @@ private:
 
 	void createRenderPass();
 
+	void createDescriptorSetLayout();
+
 	void createGraphicsPipeline();
 
 	void createFramebuffers();
@@ -88,6 +96,12 @@ private:
 	void createVertexBuffer();
 
 	void createIndexBuffer();
+
+	void createUniformBuffers();
+
+	void createDescriptorPool();
+
+	void createDescriptorSets();
 
 	void createCommandBuffers();
 

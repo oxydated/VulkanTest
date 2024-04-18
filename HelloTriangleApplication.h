@@ -46,6 +46,8 @@ private:
 	std::vector<VkBuffer> uniformBuffers;
 	std::vector<VkDeviceMemory> uniformBuffersMemory;
 	std::vector<void*> uniformBuffersMapped;
+	VkImage textureImage;
+	VkDeviceMemory textureImageMemory;
 
 	bool framebufferResized{ false };
 
@@ -92,6 +94,8 @@ private:
 	void createFramebuffers();
 
 	void createCommandPool();
+
+	void createTextureImage();
 
 	void createVertexBuffer();
 

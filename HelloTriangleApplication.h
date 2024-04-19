@@ -49,6 +49,7 @@ private:
 	VkImage textureImage;
 	VkDeviceMemory textureImageMemory;
 	VkImageView textureImageView;
+	VkSampler textureSampler;
 
 	bool framebufferResized{ false };
 
@@ -99,6 +100,8 @@ private:
 	void createTextureImage();
 
 	void createTextureImageView();
+
+	void createTextureSampler();
 
 	void createVertexBuffer();
 

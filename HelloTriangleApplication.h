@@ -21,11 +21,13 @@ private:
 	VkDevice device{};
 	VkQueue graphicsQueue;
 	VkQueue presentQueue;
+
 	VkSwapchainKHR swapChain;
 	std::vector<VkImage> swapChainImages;
 	std::vector<VkImageView> swapChainImageViews;
 	VkFormat swapChainImageFormat;
 	VkExtent2D swapChainExtent;
+
 	VkRenderPass renderPass;
 	VkDescriptorSetLayout descriptorSetLayout;
 	VkDescriptorPool descriptorPool;
@@ -39,17 +41,25 @@ private:
 	std::vector<VkSemaphore> imageAvailableSemaphores;
 	std::vector<VkSemaphore> renderFinishedSemaphores;
 	std::vector<VkFence> inFlightFences;
+
 	VkBuffer vertexBuffer;
 	VkDeviceMemory vertexBufferMemory;
+
 	VkBuffer indexBuffer;
 	VkDeviceMemory indexBufferMemory;
+
 	std::vector<VkBuffer> uniformBuffers;
 	std::vector<VkDeviceMemory> uniformBuffersMemory;
 	std::vector<void*> uniformBuffersMapped;
+
 	VkImage textureImage;
 	VkDeviceMemory textureImageMemory;
 	VkImageView textureImageView;
 	VkSampler textureSampler;
+
+	VkImage depthImage;
+	VkDeviceMemory depthImageMemory;
+	VkImageView depthImageView;
 
 	bool framebufferResized{ false };
 
@@ -96,6 +106,8 @@ private:
 	void createFramebuffers();
 
 	void createCommandPool();
+
+	void createDepthResources();
 
 	void createTextureImage();
 

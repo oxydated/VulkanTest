@@ -123,6 +123,12 @@ private:
 	VkDeviceMemory depthImageMemory;
 	VkImageView depthImageView;
 
+	VkSampleCountFlagBits msaaSamples = VK_SAMPLE_COUNT_1_BIT;
+
+	VkImage colorImage;
+	VkDeviceMemory colorImageMemory;
+	VkImageView colorImageView;
+
 	bool framebufferResized{ false };
 
 	uint32_t currentFrame{ 0 };
@@ -168,6 +174,8 @@ private:
 	void createFramebuffers();
 
 	void createCommandPool();
+
+	void createColorResources();
 
 	void createDepthResources();
 
